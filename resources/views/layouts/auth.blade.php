@@ -7,9 +7,7 @@
     <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
     <title>Login</title>
 
-    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/vendors/boxicons/css/boxicons.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    @include('components.style')
 </head>
 
 <body class="bg-soft-blue">
@@ -20,7 +18,7 @@
                 <div class="card border-0">
                     <div class="card-body">
                         <a href="." class="logo mb-5">
-                            <img src="assets/images/logo.png" alt="Logo">
+                            <img src="{{asset('assets/images/logo.png')}}" alt="Logo">
                             <h4 class="text-dark fw-bold">Quizz</h4>
                         </a>
 
@@ -31,7 +29,7 @@
         </div>
     </div>
 
-    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+@include('components.script')
 </body>
 
 </html>
