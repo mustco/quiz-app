@@ -14,5 +14,5 @@ class DashboardController extends Controller
         // dd(count($quiz));
         $user_count = User::where('roles', 'pengguna')->count();
         return view('pages.admin.dashboard', compact('quiz', 'user_count'));
-    }
+    }   
 }

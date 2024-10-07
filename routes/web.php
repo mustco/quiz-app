@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\QuestionController;
+use App\Http\Controllers\Admin\QuizCompletedController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\QuizController;
 use App\Http\Controllers\Admin\UserController;
@@ -27,6 +28,7 @@ Route::get('/kuis/{quiz_id}', [HomeController::class, 'detail'])->name('kuis.det
 Route::get('/kuis/{quiz_id}/{question_id}', [HomeController::class, 'question'])->name('kuis.pertanyaan')->middleware('quiz.success');
 Route::post('/kuis/{quiz_id}/{question_id}', [HomeController::class, 'question_store'])->name('kuis.pertanyaan.store')->middleware('quiz.success');
 Route::get('/{quiz_id}/success', [HomeController::class, 'success'])->name('kuis.berhasil');
+
 Route::get('/sukses/{quiz_id}', [HomeController::class, 'berhasil'])->name('success');
 
 Route::prefix('/admin')->middleware(['auth', 'isAdmin'])->group(function() {
@@ -35,6 +37,8 @@ Route::prefix('/admin')->middleware(['auth', 'isAdmin'])->group(function() {
     Route::resource('kuis', QuizController::class);
     Route::resource('pertanyaan', QuestionController::class);
     Route::resource('user', UserController::class);
+    Route::resource('kuis-completed', QuizCompletedController::class);
+    Route::post('kuis-completed/{quiz_id}/{id}', [QuizCompletedController::class, 'showByUserId'])->name('showByUserId');
 });
 Route::post('pertanyaan/import_excel',[QuestionController::class, 'import_excel'])->name('pertanyaan.import');
 Route::get('/download-template', [QuestionController::class, 'download'])->name('download');

@@ -1,10 +1,8 @@
 @extends('layouts.admin')
 @section('content')
 <div class="d-flex align-items-center justify-content-between mb-5">
-                <h4 class="text-dark">Semua Kuis</h4>
-                <a href="{{route('kuis.create')}}" class="btn btn-primary">
-                    <i class="bx bx-plus"></i> Tambah Baru
-                </a>
+                <h4 class="text-dark">Kuis Selesai</h4>
+               
             </div>
 
             <div class="card border-0">
@@ -27,14 +25,9 @@
                                     <td>{{$item->description}}</td>
                                     <td>
                                         <div class="d-flex gap-2">
-                                            <a href="{{route('kuis.show', $item->id)}}" class="btn btn-sm btn-info text-white">
+                                            <a href="{{route('kuis-completed.show', $item->id)}}" class="btn btn-sm btn-info text-white">
                                                 <i class="bx bx-file"></i> Lihat
                                             </a>
-                                            <a href="{{ route('kuis.edit', $item->id) }}" class="btn btn-sm btn-warning text-white">
-                                                <i class="bx bx-edit"></i> Edit 
-                                            </a>
-                                            <button type="button" data-bs-toggle="modal" data-bs-target="#deleteKuis{{$item->id}}" class="btn btn-sm btn-light">
-                                            <i class="bx bx-trash"></i> Delete</button>
                                         </div>
                                     </td>
                                 </tr>

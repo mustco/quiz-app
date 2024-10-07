@@ -1,8 +1,8 @@
 @extends('layouts.home')
 
 @section('content')
-<div class="card border-0">
-                        <div class="card-body">
+<div class="mt-5 card border-0">
+                        <div class="card-body"> 
                             <span class="success-icon text-success mx-auto border border-success rounded-circle">
                                 <i class="bx bx-check"></i>
                             </span>

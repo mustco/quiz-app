@@ -20,6 +20,6 @@ class Quiz extends Model
     }
 
     public function success() {
-        return $this->belongsTo(Success::class);
+        return $this->hasMany(Success::class);
     }
 }

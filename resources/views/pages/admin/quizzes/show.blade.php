@@ -26,7 +26,7 @@
                             </thead>
                             <tbody>
                                 @foreach($quiz->questions as $key => $value)
-                                <tr class="align-middle">
+                                <tr class="align-middle"> 
                                     <td>{{++$key}}</td>
                                     <td>{{$value->question}}</td>
                                     <td>

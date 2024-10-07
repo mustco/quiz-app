@@ -12,11 +12,21 @@
             </div>
         </a>
     </div>
+   
     <div class="col-md-3">
         <a href="{{route('user.index')}}" class="card">
             <div class="card-body">
                 <i class='bx bx-user fs-1 text-primary'></i>
                 <h5 class="text-dark mt-2">{{number_format($user_count)}} Pengguna</h5>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-3">
+        <a href="{{route('kuis-completed.index')}}" class="card">
+            <div class="card-body">
+                <i class='bx bx-brain fs-1 text-primary'></i>
+                <h5 class="text-dark mt-2">Data Tes</h5>
             </div>
         </a>
     </div>

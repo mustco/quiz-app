@@ -17,8 +17,12 @@ class Success extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function quizes() {
-        return $this->hasMany(Quiz::class);
+    public function quiz() {
+        return $this->belongsTo(Quiz::class);
+    }
+
+    public function answers() {
+        return $this->hasMany(Answer::class);
     }
 }
 
